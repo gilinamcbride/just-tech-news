@@ -72,7 +72,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/users
-router.post("/", withAuth, (req, res) => {
+router.post("/", (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   // create method inserts data into table - pass in the key value pairs where the keys are what we defined in the user model and the values are from req.body
   // same as INSERT INTO users (keys) VALUES(values)
@@ -137,7 +137,7 @@ router.post("/logout", (req, res) => {
 });
 
 // PUT /api/users/1
-router.put("/:id", withAuth, (req, res) => {
+router.put("/:id", (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   // update method combinee creating and looking up data
   // pass in req.body to provide new data and req.params.id to indicate where exactly we want the new data to be used
